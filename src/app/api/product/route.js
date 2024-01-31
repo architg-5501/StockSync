@@ -35,7 +35,7 @@ export async function POST(request) {
     console.log("hi");
     let body = await request.json();
     console.log(body);
-    const uri = "mongodb+srv://mongodb:gXKKtC3ktYnov7mJ@archit.rrghorm.mongodb.net/";
+    const uri = `mongodb+srv://${admin}:${password}@archit.rrghorm.mongodb.net/`;
     const client = new MongoClient(uri);
     console.log("product going to be added");
     try {

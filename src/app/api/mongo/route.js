@@ -12,15 +12,15 @@ export async function GET(request) {
     try {
         await client.connect();
 
-        const database = client.db('harry');
-        const movies = database.collection('inventory');
+        const database = client.db('Cinema');
+        const movies = database.collection('Shows');
 
 
         const query = {};
         const movie = await movies.findOne(query);
 
         console.log(movie);
-        return NextResponse.json({ "a": 34, movie });
+        return NextResponse.json({ movie });
     } finally {
 
         await client.close();
